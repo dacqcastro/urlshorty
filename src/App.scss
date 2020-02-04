@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    background: #edf7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .urlBar {
+        width: 100%;
+        max-width: 600px;
+        padding: 80px 60px 50px;
+        border-radius: 20px;
+        background-color: #5f6caf;
+        color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+        #logo {
+            font-family: 'Righteous', cursive;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        #form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            #bar {
+                width: 100%;
+                text-align: center;
+                margin: 30px 0 40px;
+                padding: 15px 10px;
+                border: none;
+                border-radius: 20px;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::selection {
+                    background-color: #ff8364;
+                    color: #fff;
+                }
+            }
+
+            #btn {
+                width: 100%;
+                max-width: 160px;
+                padding: 20px 0;
+                border: none;
+                color: #fff;
+                background-color: #ff8364;
+                border-radius: 30px;
+                cursor: pointer;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        .prevUrls {
+            margin-top: 40px;
+
+            .url {
+                width: 100%;
+                height: 50px;
+                display: block;
+                position: relative;
+
+                .oldUrl {
+                    float: left;
+                }
+
+                .newUrl {
+                    float: right;
+                    cursor: pointer;
+                    resize: none;
+                    background-color: inherit;
+                    border: none;
+                    color: #fff;
+                    outline: none;
+                    min-width: 200px;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    text-align: right;
+                    text-decoration: underline;
+                }
+
+                .balloon {
+                    display: none;
+                    position: absolute;
+                    right: 0;
+                    bottom: -10px;
+                    background-color: #fff;
+                    color: #000000;
+                    padding: 10px;
+                    border-radius: 10px;
+
+                    .arrow {
+                        width: 0;
+                        height: 0;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-bottom: 5px solid #fff;
+                        position: absolute;
+                        top: -5px;
+                        left: 45%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes copied {
+    0% {
+        display: block;
+        bottom: 0;
+    }
+
+    100% {
+        display: block;
+        bottom: -10px;
+    }
+}
+
+@keyframes copied-rev {
+    0% {
+        display: block;
+        bottom: -10px;
+    }
+
+    100% {
+        bottom: 0;
+        display: none;
+    }
+}
